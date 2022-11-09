@@ -91,28 +91,34 @@ public class Board {
 
     public String checkDiagonal(){
         //hard code if statement?
-        //StringBuilder diagonal = new StringBuilder();
+        StringBuilder sb1 = new StringBuilder();
         ArrayList<Character> diagonal1 = new ArrayList<Character>();
-        diagonal1.add(board[0][0]);
-        diagonal1.add(board[1][1]);
-        diagonal1.add(board[2][2]);
+        sb1.append(board[0][0]);
+        sb1.append(board[1][1]);
+        sb1.append(board[2][2]);
+        //sb1.append(diagonal1);
+        System.out.println(sb1);
 
-        if(diagonal1.toString().equals("XXX")){
+        StringBuilder sb2 = new StringBuilder();
+        ArrayList<Character> diagonal2 = new ArrayList<Character>();
+        sb2.append(board[0][2]);
+        sb2.append(board[1][1]);
+        sb2.append(board[2][0]);
+        //sb2.append(diagonal2);
+        System.out.println(sb2);
+
+        if(sb1.toString().equals("XXX")){
             return "X";
         }
-        else if(diagonal1.toString().equals("OOO")){
+        else if(sb1.toString().equals("OOO")){
             return "O";
         }
 
-        ArrayList<Character> diagonal2 = new ArrayList<Character>();
-        diagonal2.add(board[0][2]);
-        diagonal2.add(board[1][1]);
-        diagonal2.add(board[2][0]);
 
-        if(diagonal2.toString().equals("XXX")){
+        if(sb2.toString().equals("XXX")){
             return "X";
         }
-        else if(diagonal2.toString().equals("OOO")){
+        else if(sb2.toString().equals("OOO")){
             return "O";
         }
 
